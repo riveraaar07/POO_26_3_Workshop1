@@ -149,23 +149,56 @@ public class Workshop {
 
     // 14 Método que elimina los duplicados de un arreglo
     public int[] eliminarDuplicados(int[] arreglo) {
-        // TODO: Implementar el método para eliminar los duplicados de un arreglo.
-        // Ejemplo: Si arreglo = [1, 2, 2, 3, 4, 4, 5], el resultado debería ser [1, 2, 3, 4, 5].
-        return new int[0];
+        int[] temporal = new int[arreglo.length];
+        int unicos = 0;
+        for (int i = 0; i < arreglo.length; i++) {
+            boolean repetido = false;
+            for (int f = 0; f < unicos; f++) {
+                if (arreglo[i] == temporal[f]) {
+                    repetido = true;
+                    break;
+                }
+            }
+            if (!repetido) {
+                temporal[unicos] = arreglo[i];
+                unicos++;
+            }
+        }
+        int[] resultado = new int[unicos];
+        for (int i = 0; i < unicos; i++) {
+            resultado[i] = temporal[i];
+        }
+        return resultado;
     }
 
     // 15 Método que combina dos arreglos en uno solo
     public int[] combinarArreglos(int[] arreglo1, int[] arreglo2) {
-        // TODO: Implementar el método para combinar dos arreglos en uno solo.
-        // Ejemplo: Si arreglo1 = [1, 2, 3, 4, 5] y arreglo2 = [6, 7, 8], el resultado debería ser [1, 2, 3, 4, 5, 6, 7, 8].
-        return new int[0];
+        int[] combinado = new int[arreglo1.length + arreglo2.length];
+        int posicion = 0;
+        for (int i = 0; i < arreglo1.length; i++) {
+            combinado[posicion] = arreglo1[i];
+            posicion++;
+        }
+        for (int i = 0; i < arreglo2.length; i++) {
+            combinado[posicion] = arreglo2[i];
+            posicion++;
+        }
+        return combinado;
     }
 
     // 16 Método que rota un arreglo n posiciones
     public int[] rotarArreglo(int[] arreglo, int posiciones) {
-        // TODO: Implementar el método para rotar un arreglo n posiciones.
-        // Ejemplo: Si arreglo = [1, 2, 3, 4, 5] y posiciones = 2, el resultado debería ser [3, 4, 5, 1, 2].
-        return new int[0];
+        int[] combinado = new int[arreglo1.length + arreglo2.length];
+        int posicion = 0;
+        for (int i = 0; i < arreglo1.length; i++) {
+            combinado[posicion] = arreglo1[i];
+            posicion++;
+        }
+        for (int i = 0; i < arreglo2.length; i++) {
+            combinado[posicion] = arreglo2[i];
+            posicion++;
+        }
+        return combinado;
     }
 
     // 17 Método que cuenta los caracteres en una cadena
