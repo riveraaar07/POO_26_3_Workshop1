@@ -315,48 +315,66 @@ public class Workshop {
 
     // 29 Método para el juego de piedra, papel, tijera, lagarto, Spock
     public String jugarPiedraPapelTijeraLagartoSpock(String eleccionUsuario) {
-        // TODO: Implementar el método para el juego de Piedra, Papel, Tijera, Lagarto, Spock.
-        // Las reglas del juego son:
-        // - Piedra vence a Tijera y Lagarto
-        // - Papel vence a Piedra y Spock
-        // - Tijera vence a Papel y Lagarto
-        // - Lagarto vence a Spock y Papel
-        // - Spock vence a Tijera y Piedra
+        String[] opciones = {"Piedra", "Papel", "Tijera", "Lagarto", "Spock"};
+        int aleatorio = (int) (Math.random() * 5);
+        String eleccionComputadora = opciones[aleatorio];
+        if (eleccionUsuario.equals(eleccionComputadora)) {
+            return "Empate";
+        }
+        boolean ganaste = false;
+        if (eleccionUsuario.equals("Piedra") && (eleccionComputadora.equals("Tijera") || eleccionComputadora.equals("Lagarto"))) ganaste = true;
+        if (eleccionUsuario.equals("Papel") && (eleccionComputadora.equals("Piedra") || eleccionComputadora.equals("Spock"))) ganaste = true;
+        if (eleccionUsuario.equals("Tijera") && (eleccionComputadora.equals("Papel") || eleccionComputadora.equals("Lagarto"))) ganaste = true;
+        if (eleccionUsuario.equals("Lagarto") && (eleccionComputadora.equals("Spock") || eleccionComputadora.equals("Papel"))) ganaste = true;
+        if (eleccionUsuario.equals("Spock") && (eleccionComputadora.equals("Tijera") || eleccionComputadora.equals("Piedra"))) ganaste = true;
 
-
-        // El método debe retornar un mensaje indicando el resultado del juego.
-        // Ejemplo: Si la eleccionUsuario es "Piedra", el resultado podría ser "Ganaste" o "Perdiste" dependiendo de la elección de la computadora.
-        return "";
+        if (ganaste) {
+            return "Ganaste";
+        } else {
+            return "Perdiste";
+        }
     }
 
+    // 30
     public String pptls2(String game[]) {
-        //Retornar player ganador o empate
-            /*
-            Rock = R
-            Paper = P
-            Scissors = S
-            Lizard = L
-            Spock = V
-        Scissors cuts Paper
-Paper covers Rock
-Rock crushes Lizard
-Lizard poisons Spock
-Spock smashes Scissors
-Scissors decapitates Lizard
-Lizard eats Paper
-Paper disproves Spock
-Spock vaporizes Rock
-Rock crushes Scissors
-         */
-        return "";
+        String p1 = game[0];
+        String p2 = game[1];
+        if (p1.equals(p2)) {
+            return "Empate";
+        }
+        boolean p1Gana = false;
+        if (p1.equals("R") && (p2.equals("S") || p2.equals("L"))) p1Gana = true;
+        if (p1.equals("P") && (p2.equals("R") || p2.equals("V"))) p1Gana = true;
+        if (p1.equals("S") && (p2.equals("P") || p2.equals("L"))) p1Gana = true;
+        if (p1.equals("L") && (p2.equals("V") || p2.equals("P"))) p1Gana = true;
+        if (p1.equals("V") && (p2.equals("S") || p2.equals("R"))) p1Gana = true;
+        if (p1Gana) {
+            return "Player 1";
+        } else {
+            return "Player 2";
+        }
     }
 
+    // 31
     public double areaCirculo(double radio) {
-        return 0.0;
+        return Math.PI * radio * radio;
     }
 
+    // 32
     public String zoodiac(int day, int month) {
-        return "";
+        if ((month == 3 && day >= 21) || (month == 4 && day <= 19)) return "Aries";
+        if ((month == 4 && day >= 20) || (month == 5 && day <= 20)) return "Tauro";
+        if ((month == 5 && day >= 21) || (month == 6 && day <= 20)) return "Geminis";
+        if ((month == 6 && day >= 21) || (month == 7 && day <= 22)) return "Cancer";
+        if ((month == 7 && day >= 23) || (month == 8 && day <= 22)) return "Leo";
+        if ((month == 8 && day >= 23) || (month == 9 && day <= 22)) return "Virgo";
+        if ((month == 9 && day >= 23) || (month == 10 && day <= 22)) return "Libra";
+        if ((month == 10 && day >= 23) || (month == 11 && day <= 21)) return "Escorpio";
+        if ((month == 11 && day >= 22) || (month == 12 && day <= 21)) return "Sagitario";
+        if ((month == 12 && day >= 22) || (month == 1 && day <= 19)) return "Capricornio";
+        if ((month == 1 && day >= 20) || (month == 2 && day <= 18)) return "Acuario";
+        if ((month == 2 && day >= 19) || (month == 3 && day <= 20)) return "Piscis";
+        return "Fecha invalida";
     }
 
 
