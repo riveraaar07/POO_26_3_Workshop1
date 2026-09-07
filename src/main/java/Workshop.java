@@ -263,8 +263,11 @@ public class Workshop {
 
     // 25 Método que valida un correo electrónico
     public boolean validarCorreoElectronico(String correo) {
-        // TODO: Implementar el método para validar un correo electrónico.
-        // Ejemplo: Si correo = "test@example.com", el resultado debería ser true.
+        int arroba = correo.indexOf("@");
+        int punto = correo.lastIndexOf(".");
+        if (arroba > 0 && punto > arroba) {
+            return true;
+        }
         return false;
     }
 
@@ -290,7 +293,7 @@ public class Workshop {
         return "";
     }
 
-    //  Método para el juego de piedra, papel, tijera, lagarto, Spock
+    // 29 Método para el juego de piedra, papel, tijera, lagarto, Spock
     public String jugarPiedraPapelTijeraLagartoSpock(String eleccionUsuario) {
         // TODO: Implementar el método para el juego de Piedra, Papel, Tijera, Lagarto, Spock.
         // Las reglas del juego son:
