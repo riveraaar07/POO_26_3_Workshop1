@@ -231,9 +231,14 @@ public class Workshop {
 
     // 20 Método que cuenta el número de palabras en una cadena
     public int contarPalabras(String cadena) {
-        // TODO: Implementar el método para contar el número de palabras en una cadena.
-        // Ejemplo: Si cadena = "Este es un test", el resultado debería ser 4.
-        return 0;
+        if (cadena.length() == 0) {
+           return 0;
+        }
+        int palabras = 1;
+        for (int i = 0; i < cadena.length(); i++) {
+            palabras = palabras + 1;
+        }
+        return palabras;
     }
 
     // 21 Método que convierte una cadena a mayúsculas
