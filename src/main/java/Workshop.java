@@ -286,16 +286,31 @@ public class Workshop {
 
     // 27 Método que convierte un número en su representación binaria
     public String convertirABinario(int numero) {
-        // TODO: Implementar el método para convertir un número en su representación binaria.
-        // Ejemplo: Si numero = 10, el resultado debería ser "1010".
-        return "";
+        if (numero == 0) {
+           return "0";
+        }
+        String binario = "";
+        while (numero > 0) {
+              int residuo = numero % 2;
+              binario = residuo + binario;
+              numero = numero / 2;
+        }
+        return binario;
     }
 
     // 28 Método que convierte un número en su representación hexadecimal
     public String convertirAHexadecimal(int numero) {
-        // TODO: Implementar el método para convertir un número en su representación hexadecimal.
-        // Ejemplo: Si numero = 255, el resultado debería ser "FF".
-        return "";
+        if (numero == 0) {
+            return "0";
+        }
+        String hexadecimal = "";
+        char[] opciones = {"0","1","2","3","4","5","6","7","8","9","A","B","C","D","E","F"};
+        while (numero > 0) {
+              int residuo = numero % 16;
+              hexadecimal = opciones[residuo] + hexadecimal;
+              numero = numero / 16;
+        }
+        return hexadecimal;
     }
 
     // 29 Método para el juego de piedra, papel, tijera, lagarto, Spock
